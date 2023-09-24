@@ -16,9 +16,9 @@ int main()
   windowDimensions[0] = 800;
   windowDimensions[1] = 600;
   const int frameRate{60};
-  const char *title = "Dapper Dasher";
-  const char *scarfyTexturePath = "textures/scarfy.png";
-  const char *nebulaTexturePath = "textures/12_nebula_spritesheet.png";
+  const char *title{"Dapper Dasher"};
+  const char *scarfyTexturePath{"textures/scarfy.png"};
+  const char *nebulaTexturePath{"textures/12_nebula_spritesheet.png"};
 
   InitWindow(windowDimensions[0], windowDimensions[1], title);
 
@@ -45,19 +45,19 @@ int main()
 
   // AnimData for nebula
   AnimData nebulaData{
-      {0.0, 0.0, nebula.width / 8, nebula.height / 8},                // Rectangle rec
-      {windowDimensions[0], windowDimensions[1] - nebula.height / 8}, // Vector2 pos
-      0,                                                              // int frame
-      1.0 / 12.0,                                                     // float updateTime
-      0.0                                                             // float runningTime
+      {0.0f, 0.0f, nebula.width / 8.0f, nebula.height / 8.0f},                                                   // Rectangle rec
+      {static_cast<float>(windowDimensions[0]), static_cast<float>(windowDimensions[1] - nebula.height / 8.0f)}, // Vector2 pos
+      0,                                                                                                         // int frame
+      1.0 / 12.0,                                                                                                // float updateTime
+      0.0                                                                                                        // float runningTime
   };
 
   AnimData nebula2Data{
-      {0.0, 0.0, nebula.width / 8, nebula.height / 8},                      // Rectangle rec
-      {windowDimensions[0] + 300, windowDimensions[1] - nebula.height / 8}, // Vector2 pos
-      0,                                                                    // int frame
-      1.0 / 16.0,                                                           // float updateTime
-      0.0                                                                   // float runningTime
+      {0.0f, 0.0f, static_cast<float>(nebula.width / 8.0f), static_cast<float>(nebula.height / 8.0f)},                 // Rectangle rec
+      {static_cast<float>(windowDimensions[0] + 300), static_cast<float>(windowDimensions[1] - nebula.height / 8.0f)}, // Vector2 pos
+      0,                                                                                                               // int frame
+      1.0 / 16.0,                                                                                                      // float updateTime
+      0.0                                                                                                              // float runningTime
   };
 
   // nebula velocity (pixels/second)
